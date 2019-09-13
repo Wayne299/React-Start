@@ -25,9 +25,17 @@ In the project directory, you can run:
  在{}内，不能输入集合，但依然可以读取集合的value值。例如：buttonText.text
  
 ### 9.11笔记
-在末尾 `export default CommentDetail;` 表示输出
-在app.js前 `import CommentDetail from "./CommentDetail"` ./ 表示在当前文件夹下找/xx文件
+- 在末尾 `export default CommentDetail;` 表示输出
+ 在app.js前 `import CommentDetail from "./CommentDetail"` ./ 表示在当前文件夹下找/xx文件
 
-作为component运用时，需要当作jsx tag，即 <CommentDetail />
+- 作为component运用时，需要当作jsx tag，即 <CommentDetail />
 
+- parent -> child
+ index.js `< CommentDetail author="Sam" />` **provide information**
+ `author`: name of the props
+ `Sam`: value of the prop
+
+ component.js `const CommentDetail = props => {` **consume the information**
+ `{props.author}`
  
+- `<ApprovalCard> ... </ApprovalCard>` -> 需要用`{props.children}` 表示 ... 的内容
