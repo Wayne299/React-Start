@@ -39,3 +39,10 @@ In the project directory, you can run:
  `{props.author}`
  
 - `<ApprovalCard> ... </ApprovalCard>` -> 需要用`{props.children}` 表示 ... 的内容
+
+### 9.13笔记
+- Functional component: good for simple content
+- Class component: good for everything else
+ - Async operation handling method: **Class component** 
+- `constructor()`: the first method automaticaaly called
+
