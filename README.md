@@ -45,4 +45,8 @@ In the project directory, you can run:
 - Class component: good for everything else
  - Async operation handling method: **Class component** 
 - `constructor()`: the first method automaticaaly called
+ - `constructor(props){ super(props); }`  IMPORTANT! 
+ - `this.state = {lat:null}` initialize state. after call the service, then render the page
+ - `this.setState({ lat: position.coords.latitude });`   call this.setState to update state // rerender the page
+- conditionally rendering: 直接写if
 
