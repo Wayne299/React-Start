@@ -50,3 +50,14 @@ In the project directory, you can run:
  - `this.setState({ lat: position.coords.latitude });`   call this.setState to update state // rerender the page
 - conditionally rendering: 直接写if
 
+### 9.16笔记
+- **component lifecycle**:
+ - constructor: setup / request some API (建议放在componentDidMount) 
+ - render: return JSX
+ - componentDidMount: data loading (one time job)
+ - componentDidUpdate: data loading when state/props change (multiable data loading) 
+ - componentWillUnmount: cleanup (non-React stuff)
+ - other methods
+- `state = {}` = `constructor(){this.state = {}}`  Babel帮助转化成后者
+- `xxx.defaultProps = {message:"Loading"}`: a object of default props
+
