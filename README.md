@@ -61,3 +61,19 @@ In the project directory, you can run:
 - `state = {}` = `constructor(){this.state = {}}`  Babel帮助转化成后者
 - `xxx.defaultProps = {message:"Loading"}`: a object of default props
 
+### 9.19笔记
+- `onChange={this.onInputChange}` 不加()，避免每次加载都会call
+ - onChange onClick onSubmit 都是特殊的prop，但并不是所有都有
+ - `event.target.value` 表示text中的值 （ event是func(event) ）
+- **controlled** vs **uncontrolled**
+ - store information inside the component:
+
+	 ```
+	 value={this.state.term} // 与原先的value相等 只是controlled思想
+	 onChange={e => this.setState({ term: e.target.value})}
+	 ```
+- `event.preventDefault();` press <kbd>Enter</kbd> 不会刷新页面
+-  What is 'this' used for in a class?  All class
+-  How is the value of 'this' determined in a function? two solutions: 
+ - `xxx = event => {}` 
+ - `<form onSubmit={event =>this.xxx(event)} >`
