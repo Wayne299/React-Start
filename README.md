@@ -77,3 +77,15 @@ In the project directory, you can run:
 -  How is the value of 'this' determined in a function? two solutions: 
  - `xxx = event => {}` 
  - `<form onSubmit={event =>this.xxx(event)} >`
+
+### 9.27笔记
+- `axios.get().then(response =>{})` 处理promise, 或者用下面的方法代替
+
+ ```
+ async onSearchSubmit(term){             // async METHODNAME
+   const response = await axios.get();   // await axios.get
+ ``` 
+- `onSearchSubmit = async (term) => {}` 规范成arrow function，防止this. 出现问题
+- `export default axios.create()`
+- `array.map( ()=>{} )` iterate every value to create a NEW array.
+- implement keys in Lists: help React render list or update list
