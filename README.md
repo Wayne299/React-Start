@@ -89,3 +89,30 @@ In the project directory, you can run:
 - `export default axios.create()`
 - `array.map( ()=>{} )` iterate every value to create a NEW array.
 - implement keys in Lists: help React render list or update list
+
+### 10.1笔记
+```
+const {urls, description} = this.props.image;
+<img alt={description} src={urls} />
+
+// this.props.image.urls   this.props.image.description
+
+```
+
+- **React Refs**
+ - gives access to single DOM element (=document.querySelector())
+ - creact refs in the constructor, assign them to instance variables, then pass to a particular JSX element as props
+ - create ref
+
+  ```
+	constructor(props) {
+		super(props);
+		this.imageRef = React.createRef();
+	}
+	
+	<img ref={this.imageRef} />
+  ```
+  
+  - componentDidMount 中打印图片等的数据是❌的，这时图片还没有被下载，所以不能加载其中的数据 
+     - `this.imageRef.current.addEventListener("load", this.setSpans)` 当load时再执行操作
+
