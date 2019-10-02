@@ -66,6 +66,7 @@ In the project directory, you can run:
  - onChange onClick onSubmit 都是特殊的prop，但并不是所有都有
  - `event.target.value` 表示text中的值 （ event是func(event) ）
 - **controlled** vs **uncontrolled**
+ - 将uncontrolled input 改为 controlled: 直接在component里找search term不需要在dom中找
  - store information inside the component:
 
 	 ```
@@ -79,11 +80,13 @@ In the project directory, you can run:
  - `<form onSubmit={event =>this.xxx(event)} >`
 
 ### 9.27笔记
-- `axios.get().then(response =>{})` 处理promise, 或者用下面的方法代替
+- `axios.get().then(response =>{})` 处理promise, ==get response==. 或者用下面的方法代替 
 
  ```
- async onSearchSubmit(term){             // async METHODNAME
+   async onSearchSubmit(term){             // async METHODNAME
    const response = await axios.get();   // await axios.get
+   
+   response.data.items 					// get response
  ``` 
 - `onSearchSubmit = async (term) => {}` 规范成arrow function，防止this. 出现问题
 - `export default axios.create()`
@@ -116,3 +119,4 @@ const {urls, description} = this.props.image;
   - componentDidMount 中打印图片等的数据是❌的，这时图片还没有被下载，所以不能加载其中的数据 
      - `this.imageRef.current.addEventListener("load", this.setSpans)` 当load时再执行操作
 
+- onTermSubmit onFormSubmit ❓
