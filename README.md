@@ -120,3 +120,9 @@ const {urls, description} = this.props.image;
      - `this.imageRef.current.addEventListener("load", this.setSpans)` 当load时再执行操作
 
 - onTermSubmit onFormSubmit ❓
+- 两种相同:
+
+ ```
+ const VideoList = props => {props.videos.length} 
+ const VideoList = {videos} => {videos.length}
+ ```
