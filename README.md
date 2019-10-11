@@ -126,3 +126,8 @@ const {urls, description} = this.props.image;
  const VideoList = props => {props.videos.length} 
  const VideoList = {videos} => {videos.length}
  ```
+ 
+### 10.11笔记
+- Redux Cycle: Action Creator -> Action -> dispatch -> Reducers -> State
+- Insurance CO: Person -> the form -> form receiver -> Department -> Compileed department data 
+- [codepen note](https://codepen.io/wayne299/pen/VwwvVLR)
