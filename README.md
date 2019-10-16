@@ -131,3 +131,17 @@ const {urls, description} = this.props.image;
 - Redux Cycle: Action Creator -> Action -> dispatch -> Reducers -> State
 - Insurance CO: Person -> the form -> form receiver -> Department -> Compileed department data 
 - [codepen note](https://codepen.io/wayne299/pen/VwwvVLR)
+
+### 10.15笔记
+- `import "../actions/index"` 与 `import "../actions"` 效果相同，webpack将import文件夹中的index.js文件
+-  `import {selectSong} from "../actions"` import named files，not export default.
+-  `export default connect(mapStateToProps)(SongList);`  第一个括号return了一个function 第二个revoke这个func.
+ - 自动实现 action + dispatch -> update the state
+ -  `connect(mapStateToProps, {selectSong})(SongList)` 第一个括号里的第二个参数是打包好的action ？？？
+```
+mapStateToProps = state => {
+	return { songs: state.songs }; 
+};  // 在SongList中 this.props === { songs: state.songs }
+
+export default connect(mapStateToProps, {selectSong})(SongList)
+```
