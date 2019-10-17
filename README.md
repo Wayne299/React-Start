@@ -137,7 +137,7 @@ const {urls, description} = this.props.image;
 -  `import {selectSong} from "../actions"` import named files，not export default.
 -  `export default connect(mapStateToProps)(SongList);`  第一个括号return了一个function 第二个revoke这个func.
  - 自动实现 action + dispatch -> update the state
- -  `connect(mapStateToProps, {selectSong})(SongList)` 第一个括号里的第二个参数是打包好的action ？？？
+ -  `connect(mapStateToProps, {selectSong})(SongList)` 第一个括号里的第二个参数{}是打包的action,将传入做props
 ```
 mapStateToProps = state => {
 	return { songs: state.songs }; 
