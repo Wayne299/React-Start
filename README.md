@@ -138,6 +138,7 @@ const {urls, description} = this.props.image;
 -  `export default connect(mapStateToProps)(SongList);`  第一个括号return了一个function 第二个revoke这个func.
  - 自动实现 action + dispatch -> update the state
  -  `connect(mapStateToProps, {selectSong})(SongList)` 第一个括号里的第二个参数{}是打包的action,将传入做props
+
 ```
 mapStateToProps = state => {
 	return { songs: state.songs }; 
@@ -145,3 +146,15 @@ mapStateToProps = state => {
 
 export default connect(mapStateToProps, {selectSong})(SongList)
 ```
+
+### 10.18笔记
+- General Data Loading with Redux
+ - Component gets rendered onto the screen
+ - Component's(class) 「componentDidMount」 lifecycle method gets called
+ - call action creator from 「componentDidMount」
+ - action creator runs the code to make an API request. redux-thunk comes into play
+ - API responds with data
+ - Action creator returns an 'action' with the fetched data on the 'payload' property
+ - some reducer see the action, returns the data off the 'payload'
+ - cause we generated some new 'state' object, redux/react-redux cause React app to be rerendered
+- async await Action: return的不是plain js object.
