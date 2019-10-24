@@ -4,7 +4,7 @@ import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
 
-class App extends React.Component() {
+class App extends React.Component {
 	state = { videos: [], selectedVideo: null };
 
 	componentDidMount() {
@@ -18,14 +18,14 @@ class App extends React.Component() {
 			}
 		});
 
-		onVideoSelect = video => {
-			this.setState({ selectedVideo: video });
-		};
-
 		this.setState({
 			videos: response.data.items,
 			selecedVideo: response.data.items[0]
 		});
+	};
+
+	onVideoSelect = video => {
+		this.setState({ selectedVideo: video });
 	};
 
 	render() {
